@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220824 13:18:37.801" rpa="false" schemaversion="3">
+<suite id="s1" name="Tutorial-Robot" source="C:\Users\NoT\Desktop\Cursos\tutorial-robot">
+<suite id="s1-s1" name="Bdd" source="C:\Users\NoT\Desktop\Cursos\tutorial-robot\bdd.robot">
+<test id="s1-s1-t1" name="Cenário 1: Executar vídeo no Youtube" line="37">
+<kw name="Dado que acesso o site do Youtube">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220824 13:18:38.523" level="INFO">Opening browser 'chrome' to base url 'https://www.youtube.com/'.</msg>
+<status status="PASS" starttime="20220824 13:18:38.522" endtime="20220824 13:19:15.579"/>
+</kw>
+<status status="PASS" starttime="20220824 13:18:38.521" endtime="20220824 13:19:15.580"/>
+</kw>
+<kw name="Quando pesquiso o nome da música">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${input_search}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220824 13:19:15.583" endtime="20220824 13:19:21.242"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_search}</arg>
+<arg>${títuloDoVídeo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220824 13:19:21.245" level="INFO">Typing text 'Michael Jackson Hollywood Tonight' into text field '//input[@id="search"]'.</msg>
+<status status="PASS" starttime="20220824 13:19:21.243" endtime="20220824 13:19:21.987"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button_search}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220824 13:19:21.989" level="INFO">Clicking button '//button[@id="search-icon-legacy"]'.</msg>
+<status status="PASS" starttime="20220824 13:19:21.988" endtime="20220824 13:19:22.435"/>
+</kw>
+<status status="PASS" starttime="20220824 13:19:15.581" endtime="20220824 13:19:22.436"/>
+</kw>
+<kw name="E clico na primeira opção">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${primeira_opcao}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220824 13:19:22.439" endtime="20220824 13:19:24.472"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${primeira_opcao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220824 13:19:24.474" level="INFO">Clicking element '(//yt-formatted-string[@class="style-scope ytd-video-renderer"])[1]'.</msg>
+<status status="PASS" starttime="20220824 13:19:24.473" endtime="20220824 13:19:25.834"/>
+</kw>
+<status status="PASS" starttime="20220824 13:19:22.437" endtime="20220824 13:19:25.835"/>
+</kw>
+<kw name="Então o vídeo é executado">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${botao_inscrever-se}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220824 13:19:26.206" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220824 13:19:26.210" level="FAIL">Element with locator '//yt-formatted-string[contains(text(),"Compartilhar")]' not found.</msg>
+<status status="FAIL" starttime="20220824 13:19:25.839" endtime="20220824 13:19:26.751"/>
+</kw>
+<status status="FAIL" starttime="20220824 13:19:25.837" endtime="20220824 13:19:26.753"/>
+</kw>
+<status status="FAIL" starttime="20220824 13:18:38.518" endtime="20220824 13:19:26.756">Element with locator '//yt-formatted-string[contains(text(),"Compartilhar")]' not found.</status>
+</test>
+<status status="FAIL" starttime="20220824 13:18:37.961" endtime="20220824 13:19:26.762"/>
+</suite>
+<status status="FAIL" starttime="20220824 13:18:37.843" endtime="20220824 13:19:26.775"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tutorial-Robot">Tutorial-Robot</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Bdd">Tutorial-Robot.Bdd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
